@@ -3,30 +3,39 @@ import { DataGrid } from '@material-ui/data-grid';
 import s from './Products.module.css';
 
 const fields = [
-    { field: 'id', headerName: 'ID', width: 90 },
+    { field: 'id', headerName: 'ID', width: 90, headerAlign: 'center', align: 'center' },
     {
         field: 'name',
         headerName: 'Name',
         width: 150,
+        headerAlign: 'center',
+        align: 'center',
     },
     {
         field: 'description',
         headerName: 'Description',
-        width: 200,
+        width: 250,
+        sortable: false,
+        headerAlign: 'center',
     },
     {
         field: 'category',
         headerName: 'Category',
         width: 120,
+        headerAlign: 'center',
+        align: 'center',
     },
     {
         field: 'price',
         headerName: 'Price',
         type: 'number',
         width: 110,
+        headerAlign: 'center',
+        align: 'center',
         valueFormatter: (params) => {
-            return `${params.value} $`;
+            return `$${params.value}`;
         },
+
     },
 ];
 
@@ -49,6 +58,7 @@ const Products = (props)=>{
                 rows={goods}
                 columns={fields}
                 pageSize={10}
+                disableColumnMenu={true}
             />
         </div>
     );
