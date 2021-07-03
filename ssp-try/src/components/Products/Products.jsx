@@ -7,7 +7,7 @@ const fields = [
     {
         field: 'name',
         headerName: 'Name',
-        width: 150,
+        width: 149,
         headerAlign: 'center',
         align: 'center',
     },
