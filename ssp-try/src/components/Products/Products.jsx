@@ -10,28 +10,36 @@ const fields = [
         width: 150,
     },
     {
+        field: 'description',
+        headerName: 'Description',
+        width: 200,
+    },
+    {
         field: 'category',
         headerName: 'Category',
-        width: 150,
+        width: 120,
     },
     {
         field: 'price',
         headerName: 'Price',
         type: 'number',
         width: 110,
+        valueFormatter: (params) => {
+            return `${params.value} $`;
+        },
     },
 ];
 
 const goods = [
-    { id: 1, name: 'Snow', category: 'Jossn', price: 35 },
-    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-    { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-    { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-    { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-    { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-    { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-    { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-    { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+    { id: 1, name: 'Pants', description:'Shtany za 40 griven', category: 'Clothes', price: 40 },
+    { id: 2, name: 'T-shirt', description:'Amazing ARMYANE futbolka', category: 'Clothes', price: 20 },
+    { id: 3, name: 'Jacket', description:'Pidzhak', category: 'Clothes', price: 33 },
+    { id: 4, name: 'Socks', description:'GUCCI Socks', category: 'Clothes', price: 5 },
+    { id: 5, name: 'Lamborghini', description:'Sport car', category: 'Car', price: 150000 },,
+    { id: 6, name: 'Lexus', description:'Premium car', category: 'Car', price: 20 },
+    { id: 7, name: 'BMW', description:'Takih bol`she ne delayut', category: 'Car', price: 1200 },
+    { id: 8, name: 'Xiaomi MI 220 Ultra', description:'Amazing ARMYANE futbolka', category: 'Technologies', price: 20 },
+    { id: 9, name: 'OppO', description:'Amazing smartphone', category: 'Clothes', price: 20 },
 ];
 
 const Products = (props)=>{
