@@ -1,15 +1,17 @@
 import * as React from 'react';
 import { DataGrid } from '@material-ui/data-grid';
 import s from './Products.module.css';
+import DeleteModal from "../AdminPage/DeleteModal/DeleteModal";
+import EditModal from "../AdminPage/EditModal/EditModal";
 
 const fields = [
-    { field: 'id', headerName: 'ID', width: 90, headerAlign: 'center', align: 'center' },
+    { field: 'id', headerName: 'ID', width: 70, headerAlign: 'center', align: 'center' },
     {
         field: 'name',
         headerName: 'Name',
         width: 149,
         headerAlign: 'center',
-        align: 'center',
+
     },
     {
         field: 'description',
@@ -17,6 +19,7 @@ const fields = [
         width: 250,
         sortable: false,
         headerAlign: 'center',
+
     },
     {
         field: 'category',
@@ -37,6 +40,24 @@ const fields = [
         },
 
     },
+    // {
+    //     field: 'edit',
+    //     headerName: '    ',
+    //     width: 100,
+    //     sortable: false,
+    //     renderCell: (params: GridCellParams) => {
+    //         return <EditModal/>
+    //     },
+    // },
+    // {
+    //     field: 'delete',
+    //     headerName: '      ',
+    //     width: 120,
+    //     sortable: false,
+    //     renderCell: (params: GridCellParams) => {
+    //          return <DeleteModal/>
+    //     }
+    // },
 ];
 
 const goods = [
@@ -47,7 +68,7 @@ const goods = [
     { id: 5, name: 'Lamborghini', description:'Sport car', category: 'Car', price: 150000 },,
     { id: 6, name: 'Lexus', description:'Premium car', category: 'Car', price: 20 },
     { id: 7, name: 'BMW', description:'Takih bol`she ne delayut', category: 'Car', price: 1200 },
-    { id: 8, name: 'Xiaomi MI 220 Ultra', description:'Amazing ARMYANE futbolka', category: 'Technologies', price: 20 },
+    { id: 8, name: 'Xiaomi MI 220 Ultra', description:'Smartphone', category: 'Technologies', price: 20 },
     { id: 9, name: 'OppO', description:'Amazing smartphone', category: 'Clothes', price: 20 },
 ];
 

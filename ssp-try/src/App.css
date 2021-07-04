@@ -1,19 +1,3 @@
-.app-wrapper{
-  display: grid;
-
-  grid-template-rows:  2fr;
-    grid-template-columns: 2fr;
-  grid-template-areas:
-          'head'
-          'nav';
-    grid-gap: 1em;
-}
-
-.app-wrapper-content{
-    margin: 10px;
-    grid-area: content;
-}
-
 .navbar{
     grid-area: nav;
 }
