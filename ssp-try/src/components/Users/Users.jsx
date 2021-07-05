@@ -1,9 +1,14 @@
 import * as React from 'react';
-import {DataGrid, GridToolbarContainer, GridToolbarFilterButton} from '@material-ui/data-grid';
+import {
+    DataGrid,
+    GridToolbarContainer,
+    GridToolbarDensitySelector,
+    GridToolbarFilterButton
+} from '@material-ui/data-grid';
 import s from './Users.module.css';
-import {GridCellParams} from "@material-ui/data-grid";
-import DeleteModal from "../AdminPage/DeleteModal/DeleteModal";
-import EditModal from "../AdminPage/EditModal/EditModal";
+import { GridCellParams } from '@material-ui/data-grid';
+import { DeleteModalUser } from '../AdminPage/DeleteModal/DeleteModal';
+import { EditModalUser } from '../AdminPage/EditModal/EditModal';
 
 const fields = [
     { field: 'id', headerName: 'ID', width: 70,  headerAlign: 'center', align: 'center', },
@@ -17,7 +22,7 @@ const fields = [
     {
         field: 'username',
         headerName: 'Username',
-        width: 150,
+        width: 200,
         headerAlign: 'center',
         align: 'center',
     },
@@ -25,14 +30,14 @@ const fields = [
         field: 'age',
         headerName: 'Age',
         type: 'number',
-        width: 90,
+        width: '8em',
         headerAlign: 'center',
         align: 'center',
     },
     {
         field: 'gender',
         headerName: 'Gender',
-        width: 110,
+        width: '9em',
         headerAlign: 'center',
         align: 'center',
 
@@ -40,22 +45,22 @@ const fields = [
     {
         field: 'edit',
         headerName: '    ',
-        width: 100,
+        width: '7em',
         sortable: false,
 
         renderCell: (params: GridCellParams) => {
             const userIndex = users.findIndex((obj) => obj.id === params.id);
-            return <EditModal user={users[userIndex]} />;
+            return <EditModalUser user={users[userIndex]} />;
         }
 
     },
     {
         field: 'delete',
         headerName: '      ',
-        width: 120,
+        width: '9em',
         sortable: false,
         renderCell: (params: GridCellParams) => (
-            <DeleteModal/>
+            <DeleteModalUser/>
         ),
     },
 ];
@@ -91,10 +96,11 @@ const Users = ()=>{
                 components={{
                     Toolbar: CustomToolbar,
                 }}
+                autoHeight
                 disableColumnMenu={true}
             />
         </div>
     );
 };
 
-export default Users;
+export { Users };

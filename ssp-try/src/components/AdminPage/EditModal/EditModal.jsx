@@ -7,9 +7,15 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import EditIcon from '@material-ui/icons/Edit';
 import SaveIcon from '@material-ui/icons/Save';
-import {FormControl, FormControlLabel, FormLabel, Radio, RadioGroup} from "@material-ui/core";
+import {
+    FormControl,
+    FormControlLabel,
+    FormLabel,
+    Radio,
+    RadioGroup,
+} from '@material-ui/core';
 
-const EditModal = (props) => {
+const EditModalUser = (props) => {
     const USER = props.user;
     const [open, setOpen] = React.useState(false);
     const [value, setValue] = React.useState(USER.gender);
@@ -42,7 +48,8 @@ const EditModal = (props) => {
                         label="Email Address"
                         type="email"
                         fullWidth
-                        value={USER.email}
+                        defaultValue={USER.email}
+                        variant="outlined"
                     />
                     <TextField
                         autoFocus
@@ -51,7 +58,8 @@ const EditModal = (props) => {
                         label="Username"
                         type="string"
                         fullWidth
-                        value={USER.username}
+                        defaultValue={USER.username}
+                        variant="outlined"
                     />
                     <TextField
                         autoFocus
@@ -60,7 +68,8 @@ const EditModal = (props) => {
                         label="Age"
                         type="number"
                         fullWidth
-                        value={USER.age}
+                        defaultValue={USER.age}
+                        variant="outlined"
                     />
                     <FormControl component="fieldset">
                         <FormLabel component="legend">Gender</FormLabel>
@@ -83,4 +92,78 @@ const EditModal = (props) => {
     );
 }
 
-export default EditModal;
+const EditModalProduct = (props) => {
+    const PRODUCT = props.product;
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    return (
+        <div>
+            <Button variant="outlined" color="primary" onClick={handleClickOpen} startIcon={<EditIcon/>}>
+                Edit
+            </Button>
+            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                <DialogTitle id="form-dialog-title">Edit</DialogTitle>
+                <DialogContent>
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="name"
+                        label="Name"
+                        type="name"
+                        fullWidth
+                        defaultValue={PRODUCT.name}
+                        variant="outlined"
+                    />
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="description"
+                        label="Description"
+                        type="string"
+                        fullWidth
+                        defaultValue={PRODUCT.description}
+                        variant="outlined"
+                    />
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="price"
+                        label="Price"
+                        type="number"
+                        fullWidth
+                        defaultValue={PRODUCT.price}
+                        variant="outlined"
+                    />
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="category"
+                        label="Category"
+                        type="string"
+                        fullWidth
+                        defaultValue={PRODUCT.category}
+                        variant="outlined"
+                    />
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleClose} color="primary" variant="outlined">
+                        Cancel
+                    </Button>
+                    <Button onClick={handleClose} color="primary" variant="contained" startIcon={<SaveIcon/>}>
+                        Save
+                    </Button>
+                </DialogActions>
+            </Dialog>
+        </div>
+    );
+}
+
+export { EditModalUser, EditModalProduct };

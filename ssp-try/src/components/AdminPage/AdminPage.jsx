@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import s from './AdminPage.module.css';
-import Header from "../Header/Header";
-import Navbar from "../Navbar/Navbar";
+import { Header } from '../Header/Header';
+import { Navbar } from '../Navbar/Navbar';
 
 const AdminPage = () =>(
     <div className={s.appWrapper}>
@@ -10,4 +10,4 @@ const AdminPage = () =>(
     </div>
 );
 
-export default AdminPage;
+export { AdminPage };
