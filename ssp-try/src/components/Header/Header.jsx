@@ -4,7 +4,7 @@ import s from './Header.module.css';
 const Header = () => (
   <header className={s.header}>
     <div className={s.name}>
-       Header
+      Header
     </div>
   </header>
 );

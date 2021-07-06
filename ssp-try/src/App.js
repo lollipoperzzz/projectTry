@@ -5,8 +5,9 @@ import { AdminPage } from './components/AdminPage/AdminPage';
 
 function App() {
   return (
+  // eslint-disable-next-line react/jsx-filename-extension
     <BrowserRouter>
-        <Route path="/admin" component={AdminPage}/>
+      <Route path="/admin" component={AdminPage} />
     </BrowserRouter>
   );
 }
